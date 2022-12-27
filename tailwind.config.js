@@ -6,6 +6,7 @@ module.exports = {
     extend: {
       fontFamily: {
         'chelten': ['Cheltenham', 'serif'],
+        'imperial' : ['Imperial', 'serif'],
       },
     },
   },
