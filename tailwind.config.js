@@ -3,7 +3,11 @@ module.exports = {
   content: ["./resources/**/*.{blade.php,js}"],
   darkMode: 'class',
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'chelten': ['Cheltenham', 'serif'],
+      },
+    },
   },
   plugins: [],
 }

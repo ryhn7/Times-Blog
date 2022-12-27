@@ -14,11 +14,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('home', [
+        'title' => 'Home'
+    ]);
 });
 
 Route::get('/about', function () {
     return view('about', [
+        'title' => 'About',
         'name' => 'Rayhan Gallery',
         'email' => 'gallery@Gmail.com',
         'image' => 'https://source.unsplash.com/500x500'
@@ -26,5 +29,7 @@ Route::get('/about', function () {
 });
 
 Route::get('/post', function () {
-    return view('posts');
+    return view('posts', [
+        'title' => 'Blog'
+    ]);
 });
