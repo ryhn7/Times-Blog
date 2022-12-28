@@ -1,5 +1,21 @@
 @extends('layouts.main')
 
+@section('menu')
+    <div class="flex max-w-full">
+        <div class="flex px-4 py-2">
+            @foreach ($categories as $category)
+                <div class="px-2 rounded group hover:bg-slate-200">
+                    <a href="/categories/{{ $category->slug }}"
+                        class="inline-block py-1 px-auto text-sm group-hover:font-semibold">{{ $category->name }}</a>
+                </div>
+            @endforeach
+
+        </div>
+    </div>
+    <hr class="mt-1 border-t-1 border-slate-900">
+    <hr class="mt-1 border-t-1 border-slate-900">
+@endsection
+
 @section('container')
     <div class="rounded-lg shadow-xl px-5 py-2 font-imperial">
         @foreach ($posts as $post)

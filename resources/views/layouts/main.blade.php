@@ -12,9 +12,10 @@
 
 <body>
     @include('partials.navbar')
-    @if ($title === 'Blog')
-        @include('partials.menu')
-    @endif
+
+    <div>
+        @yield('menu')
+    </div>
 
     <div class="container mt-5">
         @yield('container')

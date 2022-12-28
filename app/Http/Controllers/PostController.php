@@ -13,7 +13,8 @@ class PostController extends Controller
     {
         return view('posts', [
             'title' => 'Blog',
-            'posts' => Post::all()
+            'posts' => Post::all(),
+            'categories' => Category::all()
         ]);
     }
 
@@ -30,7 +31,8 @@ class PostController extends Controller
         return view('category', [
             'title' => 'Post By Category',
             'posts' => $category->posts,
-            'category' => $category->name
+            'category' => $category->name,
+            'categories' => Category::all()
         ]);
     }
 }
