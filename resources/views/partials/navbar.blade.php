@@ -1,4 +1,4 @@
-<nav class="bg-slate border border-gray-400 px-2 sm:px-4 py-2.5 dark:bg-gray-900">
+<nav class="bg-slate border border-gray-300 px-2 sm:px-4 py-2.5 dark:bg-gray-900">
     <div class="container flex flex-wrap items-center justify-start mx-auto">
         <a href="#" class="flex items-center">
             <img src="{{ asset('assets/img/times.svg') }}" class="h-6 mr-3 sm:h-9" alt="Times Logo" />
