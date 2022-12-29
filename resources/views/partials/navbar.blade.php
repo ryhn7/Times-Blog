@@ -1,6 +1,6 @@
 <nav class="bg-slate border border-gray-300 px-2 sm:px-4 py-2.5 dark:bg-gray-900">
     <div class="container flex flex-wrap items-center justify-start mx-auto">
-        <a href="#" class="flex items-center">
+        <a href="/" class="flex items-center">
             <img src="{{ asset('assets/img/times.svg') }}" class="h-6 mr-3 sm:h-9" alt="Times Logo" />
             <span class="self-center text-2xl font-chelten whitespace-nowrap dark:text-white">Times</span>
         </a>
