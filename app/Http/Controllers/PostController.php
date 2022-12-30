@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
 use App\Models\Post;
+use App\Models\User;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
@@ -13,7 +14,7 @@ class PostController extends Controller
     {
         return view('posts', [
             'title' => 'Blog',
-            'posts' => Post::all(),
+            'posts' => Post::with(['author'])->latest()->get(),
             'categories' => Category::all()
         ]);
     }
@@ -31,8 +32,14 @@ class PostController extends Controller
         return view('category', [
             'title' => 'Post By Category',
             'posts' => $category->posts,
-            'category' => $category->name,
-            'categories' => Category::all()
+        ]);
+    }
+
+    public function author(User $author)
+    {
+        return view('author', [
+            'title' => 'Post By Author',
+            'posts' => $author->posts,
         ]);
     }
 }
