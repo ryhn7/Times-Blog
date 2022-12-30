@@ -27,7 +27,11 @@
                             <h3 class="text-2xl font-bold text-slate-900 mb-2"><a href="/posts/{{ $posts[0]->slug }}"
                                     class="group-hover:text-slate-700">{{ $posts[0]->title }}</a></h3>
                             <div class="text-[#5A5A5A]">{{ $posts[0]->excerpt }}</div>
-                            <div class="text-xs text-[#727272] mt-2">{{ $posts[0]->created_at->diffForHumans() }}</div>
+                            <div class="flex text-xs text-[#727272] mt-2">
+                                <img src="{{ asset('assets/icons/clock.svg') }}" alt="clock" width="14"
+                                    class="mr-2">
+                                {{ $posts[0]->created_at->diffForHumans() }}
+                            </div>
                         </div>
                         <div class="w-2/3">
                             <img src="https://source.unsplash.com/550x350" alt="image">
@@ -43,7 +47,11 @@
                                 <h3 class="text-2xl font-bold text-slate-900 mb-2"><a href="/posts/{{ $post->slug }}"
                                         class="group-hover:text-slate-700">{{ $post->title }}</a></h3>
                                 <div class="text-[#5A5A5A]">{{ $post->excerpt }}</div>
-                                <div class="text-xs text-[#727272] mt-2">{{ $post->created_at->diffForHumans() }}</div>
+                                <div class="flex text-xs text-[#727272] mt-2">
+                                    <img src="{{ asset('assets/icons/clock.svg') }}" alt="clock" width="14"
+                                        class="mr-2">
+                                    {{ $posts[0]->created_at->diffForHumans() }}
+                                </div>
                             </div>
                             <div class="w-2/3">
                                 <img src="https://source.unsplash.com/550x350" alt="image">
@@ -67,7 +75,10 @@
                         <h3 class="text-2xl font-semibold mt-3 mb-2"><a href="/posts/{{ $post->slug }}"
                                 class="group-hover:text-slate-700">{{ $post->title }}</a></h3>
                         <div class="text-[#5A5A5A]">{{ $post->excerpt }}</div>
-                        <div class="text-xs text-[#727272] mt-2">{{ $post->created_at->diffForHumans() }}</div>
+                        <div class="flex text-xs text-[#727272] mt-2">
+                            <img src="{{ asset('assets/icons/clock.svg') }}" alt="clock" width="14" class="mr-2">
+                            {{ $posts[0]->created_at->diffForHumans() }}
+                        </div>
                     </div>
                 @endforeach
             </div>
