@@ -24,7 +24,7 @@
                 <div class="mb-10">
                     <div class="flex mr-5 mb-5">
                         <div class="flex-col w-1/3 mr-3">
-                            <h3 class="text-2xl font-bold text-slate-900 mb-2"><a href="/posts/{{ $posts[0]->slug }}"
+                            <h3 class="text-2xl font-bold text-slate-900 mb-2 group"><a href="/posts/{{ $posts[0]->slug }}"
                                     class="group-hover:text-slate-700">{{ $posts[0]->title }}</a></h3>
                             <div class="text-[#5A5A5A]">{{ $posts[0]->excerpt }}</div>
                             <div class="flex text-xs text-[#727272] mt-2">
@@ -44,7 +44,7 @@
                         <hr class="bg-slate-900 border border-t-1 mb-5 mr-5">
                         <div class="flex mr-5 mb-5">
                             <div class="flex-col w-1/3 mr-3">
-                                <h3 class="text-2xl font-bold text-slate-900 mb-2"><a href="/posts/{{ $post->slug }}"
+                                <h3 class="text-2xl font-bold text-slate-900 mb-2 group"><a href="/posts/{{ $post->slug }}"
                                         class="group-hover:text-slate-700">{{ $post->title }}</a></h3>
                                 <div class="text-[#5A5A5A]">{{ $post->excerpt }}</div>
                                 <div class="flex text-xs text-[#727272] mt-2">
@@ -72,7 +72,7 @@
                             <img src="https://source.unsplash.com/400x250" alt="image">
                             <div class="flex text-xs text-slate-600 w-full mt-1 px-0.5 justify-end">Source</div>
                         </div>
-                        <h3 class="text-2xl font-semibold mt-3 mb-2"><a href="/posts/{{ $post->slug }}"
+                        <h3 class="text-2xl font-semibold mt-3 mb-2 group"><a href="/posts/{{ $post->slug }}"
                                 class="group-hover:text-slate-700">{{ $post->title }}</a></h3>
                         <div class="text-[#5A5A5A]">{{ $post->excerpt }}</div>
                         <div class="flex text-xs text-[#727272] mt-2">
@@ -85,9 +85,4 @@
         </div>
         <hr class="border-t-1 border-slate-900">
     </div>
-
-
-    <div class="mb-20"></div>
-    <div class="flex max-w-full px-44 py-3 bg-red-500 font-imperial">sdfdfs</div>
-    <div class="mb-96"></div>
 @endsection
