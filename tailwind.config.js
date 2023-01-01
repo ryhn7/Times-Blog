@@ -7,6 +7,7 @@ module.exports = {
       fontFamily: {
         'chelten': ['Cheltenham', 'serif'],
         'imperial' : ['Imperial', 'serif'],
+        'karnak' : ['Karnak', 'serif'],
       },
     },
   },

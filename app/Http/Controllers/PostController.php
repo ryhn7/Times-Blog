@@ -30,7 +30,7 @@ class PostController extends Controller
     public function category(Category $category)
     {
         return view('category', [
-            'title' => 'Post By Category',
+            'title' => $category->name,
             'posts' => $category->posts,
         ]);
     }

@@ -584,6 +584,10 @@ video {
   margin-top: 2.25rem;
 }
 
+.mb-3 {
+  margin-bottom: 0.75rem;
+}
+
 .mb-10 {
   margin-bottom: 2.5rem;
 }
@@ -733,10 +737,6 @@ video {
   justify-content: flex-end;
 }
 
-.gap-4 {
-  gap: 1rem;
-}
-
 .gap-5 {
   gap: 1.25rem;
 }
@@ -761,9 +761,13 @@ video {
   border-width: 1px;
 }
 
-.border-slate-900 {
+.border-t-\[3px\] {
+  border-top-width: 3px;
+}
+
+.border-black {
   --tw-border-opacity: 1;
-  border-color: rgb(15 23 42 / var(--tw-border-opacity));
+  border-color: rgb(0 0 0 / var(--tw-border-opacity));
 }
 
 .border-slate-300 {
@@ -771,14 +775,14 @@ video {
   border-color: rgb(203 213 225 / var(--tw-border-opacity));
 }
 
+.border-slate-900 {
+  --tw-border-opacity: 1;
+  border-color: rgb(15 23 42 / var(--tw-border-opacity));
+}
+
 .border-gray-100 {
   --tw-border-opacity: 1;
   border-color: rgb(243 244 246 / var(--tw-border-opacity));
-}
-
-.border-slate-500 {
-  --tw-border-opacity: 1;
-  border-color: rgb(100 116 139 / var(--tw-border-opacity));
 }
 
 .bg-slate-500 {
@@ -789,11 +793,6 @@ video {
 .bg-slate-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(226 232 240 / var(--tw-bg-opacity));
-}
-
-.bg-blue-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
 }
 
 .bg-slate-900 {
@@ -884,6 +883,10 @@ video {
   font-family: Cheltenham, serif;
 }
 
+.font-karnak {
+  font-family: Karnak, serif;
+}
+
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
@@ -892,6 +895,11 @@ video {
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
 }
 
 .text-xs {
@@ -985,6 +993,10 @@ video {
   font-family: 'Imperial';
 
   src: url('../assets/fonts/Imperial.ttf');
+
+  font-family: 'Karnak';
+
+  src: url('../assets/fonts/Karnak.ttf');
 }
 
 .hover\:bg-slate-200:hover {
@@ -997,21 +1009,8 @@ video {
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
 
-.hover\:text-red-500:hover {
-  --tw-text-opacity: 1;
-  color: rgb(239 68 68 / var(--tw-text-opacity));
-}
-
 .hover\:underline:hover {
   text-decoration-line: underline;
-}
-
-.hover\:underline-offset-4:hover {
-  text-underline-offset: 4px;
-}
-
-.hover\:underline-offset-8:hover {
-  text-underline-offset: 8px;
 }
 
 .focus\:outline-none:focus {

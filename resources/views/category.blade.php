@@ -1,6 +1,10 @@
 @extends('layouts.main')
 
 @section('container')
+    <div class="max-w-full px-44 mb-5 font-karnak">
+        <h1 class="text-4xl mb-3">{{$title}}</h1>
+        <hr class="border-t-[3px] border-black">
+    </div>
     <div class="max-w-full px-44 py-3 font-imperial">
         <div class="flex">
             {{-- Right --}}
@@ -64,14 +68,14 @@
 
         <div class="grid grid-cols-5 gap-5 mt-5">
             @foreach ($posts as $post)
-            <div class="aspect-[5/6]">
-                <div class="w-full mb-2">
-                    <img src="https://source.unsplash.com/220x150" alt="image">
+                <div class="aspect-[5/6]">
+                    <div class="w-full mb-2">
+                        <img src="https://source.unsplash.com/220x150" alt="image">
+                    </div>
+                    <div class="text-base font-semibold text-slate-900 hover:underline underline-offset-4">
+                        <a href="/posts/{{ $post->slug }}">{{ $post->title }}</a>
+                    </div>
                 </div>
-                <div class="text-base font-semibold text-slate-900 hover:underline underline-offset-4">
-                    <a href="/posts/{{ $post->slug }}">{{ $post->title }}</a>
-                </div>
-            </div>
             @endforeach
         </div>
         <hr class="border-t-1 border-slate-300">
