@@ -8,6 +8,7 @@ module.exports = {
         'chelten': ['Cheltenham', 'serif'],
         'imperial' : ['Imperial', 'serif'],
         'karnak' : ['Karnak', 'serif'],
+        'franklin' : ['Franklin', 'sans-serif'],
       },
     },
   },
