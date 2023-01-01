@@ -27,7 +27,7 @@
                         <hr class="h-auto bg-slate-200 border ml-5">
                         <div class="w-1/3 pl-5">
                             <div class="w-full">
-                                <img src="https://source.unsplash.com/400x250" alt="image">
+                                <img src="https://source.unsplash.com/400x250?{{ $posts[0]->category->name }}" alt="image">
                                 <div class="flex text-xs text-slate-600 w-full mt-1 px-0.5 justify-end">Source</div>
                             </div>
                             <h3 class="text-2xl font-bold text-slate-900 mb-2 group"><a href="/posts/{{ $posts[0]->slug }}"
@@ -52,7 +52,7 @@
                             class="group-hover:text-slate-700">{{ $posts[0]->title }}</a></h3>
                     <div class="grid grid-cols-1">
                         <div class="flex justify-start">
-                            <img src="https://source.unsplash.com/75x75" alt="image">
+                            <img src="https://source.unsplash.com/75x75?{{ $posts[0]->category->name }}" alt="image">
                         </div>
                         <div class="text-[#5A5A5A]">{{ $posts[0]->excerpt }}</div>
                     </div>
@@ -70,7 +70,7 @@
             @foreach ($posts as $post)
                 <div class="aspect-[5/6]">
                     <div class="w-full mb-2">
-                        <img src="https://source.unsplash.com/220x150" alt="image">
+                        <img src="https://source.unsplash.com/220x150?{{ $posts[0]->category->name }}" alt="image">
                     </div>
                     <div class="text-base font-semibold text-slate-900 hover:underline underline-offset-4">
                         <a href="/posts/{{ $post->slug }}">{{ $post->title }}</a>
