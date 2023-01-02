@@ -3,11 +3,18 @@
 @section('container')
     <div class="max-w-full px-44 py-3 font-chelten">
         <div class="w-1/2 h-24 text-4xl font-bold mt-12 mx-auto">{{ $post->title }}</div>
+        <div class="w-1/2 text-2xl mt-3 mx-auto text-[#333333]">{{ $post->excerpt }}</div>
+        <div class="w-3/4 mt-10 mx-auto">
+            <img src="https://source.unsplash.com/1000x650?{{ $post->category->name }}" alt="image">
+        </div>
+        <div class="flex w-1/2 mt-8 mx-auto">
+            <div class="flex items-center justify-center w-10 h-10 rounded-full mr-3 border border-slate-500">
+                <img src="{{ asset('assets/icons/profile.png') }}" alt="icon" width="25px" class="block">
+            </div>
+            <div class="self-center font-semibold">By <a href="/authors/{{ $post->author->username }}"
+                    class="hover:underline underline-offset-2">{{ $post->author->name }}</a></div>
+        </div>
+        <div class="flex w-1/2 mt-2 mx-auto text-xs">{{ $post->created_at->toFormattedDateString() }}</div>
+        <div class="w-1/2 mt-8 mx-auto text-xl text-slate-700">{!! $post->body !!}</div>
     </div>
-    {{-- <article class="rounded-lg shadow-xl px-5 py-2 font-imperial">
-        <h2 class="text-3xl font-bold text-slate-900 mb-2">{{ $post->title }}</h2>
-        <h5 class="text-lg font-semibold text-slate-600 mb-5">by <a
-                href="/authors/{{ $post->author->username }}">{{ $post->author->name }}</a></h5>
-        <div class="text-md text-slate-500 mb-5">{!! $post->body !!}</div>
-    </article> --}}
 @endsection
