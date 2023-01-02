@@ -2,6 +2,7 @@
 
 @section('container')
     <div class="max-w-full px-44 py-3">
+        {{-- Author Profile --}}
         <div class="flex">
             <div class="flex items-center justify-center w-20 h-20 rounded-full mr-8 border border-slate-500">
                 <img src="{{ asset('assets/icons/profile.png') }}" alt="icon" width="45px" class="block">
@@ -14,7 +15,10 @@
                     eligendi aliquid dolorum neque rerum praesentium sapiente ducimus nisi.</p>
             </div>
         </div>
+
         <hr class="border-t-[3px] border-black mt-10 mb-3">
+
+        {{-- Right Section --}}
         <div class="flex">
             <div class="w-3/4 mr-5">
                 <div class="mb-10">
@@ -27,7 +31,7 @@
                                     <div class="w-2/3 mr-5">
                                         <div class="text-xs font-karnak">{{ str($posts[0]->category->name)->upper() }}</div>
                                         <h2
-                                            class="text-2xl font-bold font-chelten mb-2 group-hover:underline underline-offset-[5px]">
+                                            class="text-2xl font-bold font-chelten mb-2 group-hover:underline underline-offset-[6px]">
                                             {{ $posts[0]->title }}</h2>
                                         <h4 class="text-[#363636] font-imperial">{{ $posts[0]->excerpt }}</h4>
                                         <div class="text-xs font-karnak mt-1">By {{ str($posts[0]->author->name)->upper() }}
@@ -55,7 +59,7 @@
                                             <div class="text-xs font-karnak">{{ str($post->category->name)->upper() }}
                                             </div>
                                             <h2
-                                                class="text-2xl font-bold font-chelten mb-2 group-hover:underline underline-offset-[5px]">
+                                                class="text-2xl font-bold font-chelten mb-2 group-hover:underline underline-offset-[6px]">
                                                 {{ $post->title }}</h2>
                                             <h4 class="text-[#363636] font-imperial">{{ $post->excerpt }}</h4>
                                             <div class="text-xs font-karnak mt-1">By
@@ -73,6 +77,8 @@
                     </div>
                 @endforeach
             </div>
+
+            {{-- Left Section --}}
             <div class="w-1/4">
                 <hr class="bg-slate-300 border border-t-1 mb-1 border-dotted">
                 <div>

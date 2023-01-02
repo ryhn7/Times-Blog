@@ -31,13 +31,13 @@
                                 <div class="text-[#5A5A5A]">{{ $posts[0]->excerpt }}</div>
                                 <div class="flex text-xs text-[#727272] mt-2">
                                     <img src="{{ asset('assets/icons/clock.svg') }}" alt="clock" width="14"
-                                        class="mr-2">
+                                        class="mr-2 rounded shadow-lg">
                                     {{ $posts[0]->created_at->diffForHumans() }}
                                 </div>
                             </div>
                             <div class="w-2/3">
                                 <img src="https://source.unsplash.com/550x350?{{ $posts[0]->category->name }}"
-                                    alt="image">
+                                    alt="image" class="rounded shadow-lg">
                                 <div class="flex text-xs text-slate-600 w-full mt-1 px-0.5 justify-end">Source</div>
                             </div>
                         </div>
@@ -59,7 +59,7 @@
                                 </div>
                                 <div class="w-2/3">
                                     <img src="https://source.unsplash.com/550x350?{{ $post->category->name }}"
-                                        alt="image">
+                                        alt="image" class="rounded shadow-lg">
                                     <div class="flex text-xs text-slate-600 w-full mt-1 px-0.5 justify-end">Source</div>
                                 </div>
                             </div>
@@ -74,7 +74,7 @@
                     @foreach ($posts as $post)
                         <div class="mb-5">
                             <div class="w-full">
-                                <img src="https://source.unsplash.com/400x250?{{ $post->category->name }}" alt="image">
+                                <img src="https://source.unsplash.com/400x250?{{ $post->category->name }}" alt="image" class="rounded shadow-lg">
                                 <div class="flex text-xs text-slate-600 w-full mt-1 px-0.5 justify-end">Source</div>
                             </div>
                             <h3 class="text-2xl font-semibold mt-3 mb-2 group"><a href="/post/{{ $post->slug }}"
