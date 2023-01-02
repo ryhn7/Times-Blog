@@ -15,7 +15,7 @@
                             <img src="https://source.unsplash.com/600x350" alt="image">
                             <div class="flex text-xs text-slate-600 w-full mt-1 px-0.5 justify-end">Source</div>
                             <h3 class="text-2xl font-bold text-slate-900 mt-3 mb-2 group"><a
-                                    href="/posts/{{ $posts[0]->slug }}"
+                                    href="/post/{{ $posts[0]->slug }}"
                                     class="group-hover:text-slate-700">{{ $posts[0]->title }}</a></h3>
                             <div class="text-[#5A5A5A]">{{ $posts[0]->excerpt }}</div>
                             <div class="flex text-xs text-[#727272] mt-2">
@@ -30,7 +30,7 @@
                                 <img src="https://source.unsplash.com/400x250?{{ $posts[0]->category->name }}" alt="image">
                                 <div class="flex text-xs text-slate-600 w-full mt-1 px-0.5 justify-end">Source</div>
                             </div>
-                            <h3 class="text-2xl font-bold text-slate-900 mb-2 group"><a href="/posts/{{ $posts[0]->slug }}"
+                            <h3 class="text-2xl font-bold text-slate-900 mb-2 group"><a href="/post/{{ $posts[0]->slug }}"
                                     class="group-hover:text-slate-700">{{ $posts[0]->title }}</a></h3>
                             <div class="text-[#5A5A5A]">{{ $posts[0]->excerpt }}</div>
                             <div class="flex text-xs text-[#727272] mt-2">
@@ -48,7 +48,7 @@
             {{-- Left --}}
             <div class="flex-col w-[20%]">
                 <div class="mb-5">
-                    <h3 class="text-xl font-semibold mt-3 mb-2 group"><a href="/posts/{{ $posts[0]->slug }}"
+                    <h3 class="text-xl font-semibold mt-3 mb-2 group"><a href="/post/{{ $posts[0]->slug }}"
                             class="group-hover:text-slate-700">{{ $posts[0]->title }}</a></h3>
                     <div class="grid grid-cols-1">
                         <div class="flex justify-start">
@@ -73,7 +73,7 @@
                         <img src="https://source.unsplash.com/220x150?{{ $posts[0]->category->name }}" alt="image">
                     </div>
                     <div class="text-base font-semibold text-slate-900 hover:underline underline-offset-4">
-                        <a href="/posts/{{ $post->slug }}">{{ $post->title }}</a>
+                        <a href="/post/{{ $post->slug }}">{{ $post->title }}</a>
                     </div>
                 </div>
             @endforeach

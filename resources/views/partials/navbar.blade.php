@@ -26,9 +26,11 @@
                     </svg>
                     <span class="sr-only">Search icon</span>
                 </div>
-                <input type="text" id="search-navbar"
-                    class="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-[#346890] focus:border-[#346890] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-[#346890] dark:focus:border-[#346890]"
-                    placeholder="Search...">
+                <form action="/posts" method="GET">
+                    <input type="text" id="search" name="search"
+                        class="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-[#346890] focus:border-[#346890] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-[#346890] dark:focus:border-[#346890]"
+                        placeholder="Search...">
+                </form>
             </div>
             <button data-collapse-toggle="navbar-search" type="button"
                 class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
@@ -54,9 +56,11 @@
                     </svg>
                 </div>
                 {{-- when collapse --}}
-                <input type="text" id="search-navbar"
-                    class="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-[#346890] focus:border-[#346890] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-[#346890] dark:focus:border-[#346890]"
-                    placeholder="Search...">
+                <form action="/posts" method="GET">
+                    <input type="text" id="search" name="search"
+                        class="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-[#346890] focus:border-[#346890] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-[#346890] dark:focus:border-[#346890]"
+                        placeholder="Search...">
+                </form>
             </div>
             <ul
                 class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
@@ -70,7 +74,7 @@
                         class="block py-2 pl-3 pr-4 {{ $title === 'About' ? 'text-[#587B8F]' : 'text-gray-700' }} text-lg font-chelten font-semibold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#346890] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About</a>
                 </li>
                 <li>
-                    <a href="/post"
+                    <a href="/posts"
                         class="block py-2 pl-3 pr-4 {{ $title === 'Blog' ? 'text-[#587B8F]' : 'text-gray-700' }} text-lg font-chelten font-semibold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#346890] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Blog</a>
                 </li>
             </ul>
