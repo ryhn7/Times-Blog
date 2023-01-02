@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('container')
-    <div class="max-w-full px-44 mb-5 font-karnak">
+    <div class="max-w-full px-44 mb-5 font-franklin">
         <h1 class="text-4xl mb-3">{{$title}}</h1>
         <hr class="border-t-[3px] border-black">
     </div>

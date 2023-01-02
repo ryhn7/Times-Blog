@@ -40,8 +40,10 @@ class PostController extends Controller
     public function author(User $author)
     {
         return view('author', [
-            'title' => 'Post By Author',
+            'title' => $author->name,
             'posts' => $author->posts,
+            'author' => $author->name,
+            // 'date' => $author->posts->created_at
         ]);
     }
 }
