@@ -16,7 +16,7 @@ use App\Http\Controllers\PostController;
 |
 */
 
-Route::get('/', function () {
+Route::get('/home', function () {
     return view('home', [
         'title' => 'Home'
     ]);
@@ -32,7 +32,8 @@ Route::get('/about', function () {
 });
 
 
-Route::get('/posts', [PostController::class, 'index']);
+Route::get('/', [PostController::class, 'index']);
+// Route::get('/posts', [PostController::class, 'index']);
 Route::get('post/{post:slug}', [PostController::class, 'show']);
 Route::get('/categories/{category:slug}', [PostController::class, 'category']);
 Route::get('/authors/{author:username}', [PostController::class, 'author']);

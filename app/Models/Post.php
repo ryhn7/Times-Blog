@@ -12,6 +12,11 @@ class Post extends Model
     protected $guarded = ['id'];
     protected $with = ['category', 'author'];
 
+    public function scopeFilter()
+    {
+
+    }
+
     public function category()
     {
         return $this->belongsTo(Category::class);
@@ -21,5 +26,4 @@ class Post extends Model
     {
         return $this->belongsTo(User::class, 'user_id');
     }
-
 }

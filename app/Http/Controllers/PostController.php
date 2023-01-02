@@ -12,7 +12,7 @@ class PostController extends Controller
 {
     public function index()
     {
-        dd(request('search'));
+        // dd(request('search'));
 
         return view('posts', [
             'title' => 'All Post',
