@@ -1,13 +1,13 @@
-<nav class="px-2 sm:px-4 py-2.5 dark:bg-gray-900">
+<nav class="px-2 sm:px-4 py-2.5">
     <div class="container flex flex-wrap items-center justify-between px-44 mx-auto">
         <a href="/" class="flex items-center">
             <img src="{{ asset('assets/img/times.svg') }}" class="h-6 mr-3 sm:h-9" alt="Times Logo" />
-            <span class="self-center text-2xl font-chelten whitespace-nowrap dark:text-white">Times</span>
+            <span class="self-center text-2xl font-chelten whitespace-nowrap">Times</span>
         </a>
         <div class="flex md:order-2">
             <button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search"
                 aria-expanded="false"
-                class="md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-1">
+                class="md:hidden text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 rounded-lg text-sm p-2.5 mr-1">
                 <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd"
@@ -28,12 +28,12 @@
                 </div>
                 <form action="/" method="GET">
                     <input type="text" id="search" name="search"
-                        class="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-[#346890] focus:border-[#346890] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-[#346890] dark:focus:border-[#346890]"
+                        class="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-[#346890] focus:border-[#346890]"
                         placeholder="Search..." value="{{ request('search') }}">
                 </form>
             </div>
             <button data-collapse-toggle="navbar-search" type="button"
-                class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
                 aria-controls="navbar-search" aria-expanded="false">
                 <span class="sr-only">Open menu</span>
                 <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
@@ -58,24 +58,24 @@
                 {{-- when collapse --}}
                 <form action="/" method="GET">
                     <input type="text" id="search" name="search"
-                        class="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-[#346890] focus:border-[#346890] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-[#346890] dark:focus:border-[#346890]"
+                        class="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-[#346890] focus:border-[#346890]"
                         placeholder="Search... "value="{{ request('search') }}">
                 </form>
             </div>
             <ul
-                class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white">
                 <li>
                     <a href="/home"
-                        class="block py-2 pl-3 pr-4 {{ $title === 'Home' ? 'text-[#587B8F]' : 'text-gray-700' }} text-lg font-chelten font-semibold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#346890] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                        class="block py-2 pl-3 pr-4 {{ $title === 'Home' ? 'text-[#587B8F]' : 'text-gray-700' }} text-lg font-chelten font-semibold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#346890] md:p-0"
                         aria-current="page">Home</a>
                 </li>
                 <li>
                     <a href="/about"
-                        class="block py-2 pl-3 pr-4 {{ $title === 'About' ? 'text-[#587B8F]' : 'text-gray-700' }} text-lg font-chelten font-semibold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#346890] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About</a>
+                        class="block py-2 pl-3 pr-4 {{ $title === 'About' ? 'text-[#587B8F]' : 'text-gray-700' }} text-lg font-chelten font-semibold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#346890] md:p-0">About</a>
                 </li>
                 <li>
                     <a href="/"
-                        class="block py-2 pl-3 pr-4 {{ $title === 'All Post' ? 'text-[#587B8F]' : 'text-gray-700' }} text-lg font-chelten font-semibold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#346890] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Blog</a>
+                        class="block py-2 pl-3 pr-4 {{ $title === 'All Post' ? 'text-[#587B8F]' : 'text-gray-700' }} text-lg font-chelten font-semibold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#346890] md:p-0">Blog</a>
                 </li>
             </ul>
         </div>

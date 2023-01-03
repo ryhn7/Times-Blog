@@ -22,6 +22,12 @@ Route::get('/home', function () {
     ]);
 });
 
+Route::get('/search', function () {
+    return view('search', [
+        'title' => 'search'
+    ]);
+});
+
 Route::get('/about', function () {
     return view('about', [
         'title' => 'About',
