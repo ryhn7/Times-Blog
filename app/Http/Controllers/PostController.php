@@ -43,7 +43,14 @@ class PostController extends Controller
             'title' => $author->name,
             'posts' => $author->posts,
             'author' => $author->name,
-            // 'date' => $author->posts->created_at
+        ]);
+    }
+
+    public function search()
+    {
+        return view('search', [
+            'title' => 'Search',
+            'posts' => Post::latest()->filter(request(['search']))->get(),
         ]);
     }
 }

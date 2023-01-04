@@ -43,4 +43,5 @@ Route::get('/', [PostController::class, 'index']);
 Route::get('post/{post:slug}', [PostController::class, 'show']);
 Route::get('/categories/{category:slug}', [PostController::class, 'category']);
 Route::get('/authors/{author:username}', [PostController::class, 'author']);
+Route::get('/search', [PostController::class, 'search']);
 
