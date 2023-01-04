@@ -2,13 +2,13 @@
 
 @section('container')
     <div class="max-w-full h-36 px-80 py-7 bg-[#F7F7F7]">
-        <div class="text-xs text-[#666666]">Showing x result for:</div>
+        <div class="text-xs text-[#666666]">Showing {{ $posts->count() }} result for:</div>
         <div class="flex w-3/4 group hover:border-b">
             <div class="w-full h-12">
                 <form action="/search">
                     <input type="text"
-                        class="appearance-none bg-transparent border-none w-full text-4xl font-franklin focus:ring-0"
-                        value="{{ request('search') }}">
+                        class="appearance-none bg-transparent border-none w-full text-4xl font-franklin placeholder:text-3xl placeholder:font-imperial placeholder:text-[#B3B3C1] focus:ring-0"
+                        placeholder="Search The Times" value="{{ request('search') }}">
                 </form>
             </div>
             <button class="w-10 h-full my-auto opacity-60 group-hover:opacity-80 focus:opacity-100" type="submit">

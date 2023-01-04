@@ -1320,6 +1320,60 @@ video {
   src: url('../assets/fonts/Franklin.ttf');
 }
 
+.placeholder\:font-imperial::-moz-placeholder {
+  font-family: Imperial, serif;
+}
+
+.placeholder\:font-imperial::placeholder {
+  font-family: Imperial, serif;
+}
+
+.placeholder\:text-3xl::-moz-placeholder {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+.placeholder\:text-3xl::placeholder {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+.placeholder\:text-2xl::-moz-placeholder {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.placeholder\:text-2xl::placeholder {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.placeholder\:text-\[\]::-moz-placeholder {
+  color: ;
+}
+
+.placeholder\:text-\[\]::placeholder {
+  color: ;
+}
+
+.placeholder\:text-\[\#\]::-moz-placeholder {
+  color: #;
+}
+
+.placeholder\:text-\[\#\]::placeholder {
+  color: #;
+}
+
+.placeholder\:text-\[\#B3B3C1\]::-moz-placeholder {
+  --tw-text-opacity: 1;
+  color: rgb(179 179 193 / var(--tw-text-opacity));
+}
+
+.placeholder\:text-\[\#B3B3C1\]::placeholder {
+  --tw-text-opacity: 1;
+  color: rgb(179 179 193 / var(--tw-text-opacity));
+}
+
 .hover\:border-b:hover {
   border-bottom-width: 1px;
 }
