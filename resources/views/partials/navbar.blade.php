@@ -1,3 +1,5 @@
+{{-- @dd(request('category')) --}}
+
 <nav class="px-2 sm:px-4 py-2.5">
     @if ($title == 'Search')
         <div class="container flex flex-wrap items-center justify-start px-44 mx-auto">
@@ -70,10 +72,14 @@
                         <span class="sr-only">Search icon</span>
                     </div>
                     <form action="/search" method="GET">
+                        {{-- @if (request('category'))
+                            <input type="hidden" name="category" value="{{ request('category') }}">
+                        @endif --}}
                         <input type="text" id="search" name="search"
                             class="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-0"
                             placeholder="Search..." value="{{ request('search') }}">
                     </form>
+
                 </div>
                 <button data-collapse-toggle="navbar-search" type="button"
                     class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"

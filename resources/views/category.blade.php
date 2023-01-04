@@ -71,7 +71,7 @@
                 <div class="aspect-[5/6]">
                     <a href="/post/{{ $post->slug }}" class="group">
                         <div class="w-full mb-2">
-                            <img src="https://source.unsplash.com/220x150?{{ $posts[0]->category->name }}" alt="image" class="rounded shadow-lg">
+                            <img src="https://source.unsplash.com/220x150?{{ $post->category->name }}" alt="image" class="rounded shadow-lg">
                         </div>
                         <div class="text-base font-semibold text-slate-900 group-hover:underline underline-offset-4">
                             {{ $post->title }}

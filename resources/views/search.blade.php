@@ -5,8 +5,8 @@
         <div class="text-xs text-[#666666]">Showing {{ $posts->count() }} result for:</div>
         <div class="flex w-3/4 group hover:border-b">
             <div class="w-full h-12">
-                <form action="/search">
-                    <input type="text"
+                <form action="/search" method="GET">
+                    <input type="text" id="search" name="search"
                         class="appearance-none bg-transparent border-none w-full text-4xl font-franklin placeholder:text-3xl placeholder:font-imperial placeholder:text-[#B3B3C1] focus:ring-0"
                         placeholder="Search The Times" value="{{ request('search') }}">
                 </form>

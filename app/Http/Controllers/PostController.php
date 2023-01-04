@@ -48,9 +48,10 @@ class PostController extends Controller
 
     public function search()
     {
+        // dd(request(['search', 'category']));
         return view('search', [
             'title' => 'Search',
-            'posts' => Post::latest()->filter(request(['search']))->get(),
+            'posts' => Post::latest()->filter(request(['search', 'category', 'author']))->get(),
         ]);
     }
 }
