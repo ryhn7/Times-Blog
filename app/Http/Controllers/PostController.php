@@ -12,7 +12,7 @@ class PostController extends Controller
 {
     public function index()
     {
-        // dd(request('search'));
+        // dd(request(['search', 'category']));
 
         return view('posts', [
             'title' => 'All Post',
@@ -32,17 +32,21 @@ class PostController extends Controller
     public function category(Category $category)
     {
         return view('category', [
-            'title' => $category->name,
+            'title' => 'Category',
+            'titles' => $category->name,
             'posts' => $category->posts,
+            'slug' => $category->slug,
         ]);
     }
 
     public function author(User $author)
     {
         return view('author', [
-            'title' => $author->name,
+            'title' => "Author",
+            'titles' => $author->name,
             'posts' => $author->posts,
             'author' => $author->name,
+            'uName' => $author->username,
         ]);
     }
 

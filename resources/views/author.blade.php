@@ -7,12 +7,20 @@
             <div class="flex items-center justify-center w-20 h-20 rounded-full mr-8 border border-slate-500">
                 <img src="{{ asset('assets/icons/profile.png') }}" alt="icon" width="45px" class="block">
             </div>
-            <div class="w-1/2 flex-col">
-                <div class="text-4xl font-franklin font-bold mb-3">{{ $author }}</div>
-                <p class="text-lg text-[#727272] font-chelten">Lorem ipsum dolor sit amet, consectetur adipisicing
-                    elit.
-                    Unde autem quis
-                    eligendi aliquid dolorum neque rerum praesentium sapiente ducimus nisi.</p>
+            <div class="flex justify-between">
+                <div class="w-1/2 flex-col">
+                    <div class="text-4xl font-franklin font-bold mb-3">{{ $author }}</div>
+                    <p class="text-lg text-[#727272] font-chelten">Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit.
+                        Unde autem quis
+                        eligendi aliquid dolorum neque rerum praesentium sapiente ducimus nisi.</p>
+                </div>
+                <div class="w-200 my-auto">
+                    <div
+                        class="w-full rounded-md shadow-lg bg-[#567B95] px-2 py-1 text-white font-semibold hover:bg-[#346890] focus:bg-[#346890]">
+                        <a href="/search?author={{$uName}}">Filter Search</a>
+                    </div>
+                </div>
             </div>
         </div>
 

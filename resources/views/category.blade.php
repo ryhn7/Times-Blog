@@ -1,8 +1,16 @@
 @extends('layouts.main')
 
 @section('container')
-    <div class="max-w-full px-44 mb-5 font-franklin">
-        <h1 class="text-4xl mb-3">{{$title}}</h1>
+    <div class="max-w-full px-44 mb-5">
+        <div class="flex justify-between">
+            <h1 class="text-4xl mb-3 font-franklin">{{ $titles }}</h1>
+            <div class="w-200 my-auto">
+                    <div
+                        class="w-full rounded-md shadow-lg bg-[#567B95] px-2 py-1 text-white font-semibold hover:bg-[#346890] focus:bg-[#346890]">
+                        <a href="/search?category={{ $slug }}">Filter Search</a>
+                    </div>
+            </div>
+        </div>
         <hr class="border-t-[3px] border-black">
     </div>
     <div class="max-w-full px-44 py-3 font-imperial">
@@ -27,7 +35,8 @@
                         <hr class="h-auto bg-slate-200 border ml-5">
                         <div class="w-1/3 pl-5">
                             <div class="w-full">
-                                <img src="https://source.unsplash.com/400x250?{{ $posts[0]->category->name }}" alt="image" class="rounded shadow-lg">
+                                <img src="https://source.unsplash.com/400x250?{{ $posts[0]->category->name }}"
+                                    alt="image" class="rounded shadow-lg">
                                 <div class="flex text-xs text-slate-600 w-full mt-1 px-0.5 justify-end">Source</div>
                             </div>
                             <h3 class="text-2xl font-bold text-slate-900 mb-2 group"><a href="/post/{{ $posts[0]->slug }}"
@@ -52,7 +61,8 @@
                             class="group-hover:text-slate-700">{{ $posts[0]->title }}</a></h3>
                     <div class="grid grid-cols-1">
                         <div class="flex justify-start">
-                            <img src="https://source.unsplash.com/75x75?{{ $posts[0]->category->name }}" alt="image" class="rounded shadow-lg">
+                            <img src="https://source.unsplash.com/75x75?{{ $posts[0]->category->name }}" alt="image"
+                                class="rounded shadow-lg">
                         </div>
                         <div class="text-[#5A5A5A]">{{ $posts[0]->excerpt }}</div>
                     </div>
@@ -71,11 +81,13 @@
                 <div class="aspect-[5/6]">
                     <a href="/post/{{ $post->slug }}" class="group">
                         <div class="w-full mb-2">
-                            <img src="https://source.unsplash.com/220x150?{{ $post->category->name }}" alt="image" class="rounded shadow-lg">
+                            <img src="https://source.unsplash.com/220x150?{{ $post->category->name }}" alt="image"
+                                class="rounded shadow-lg">
                         </div>
                         <div class="text-base font-semibold text-slate-900 group-hover:underline underline-offset-4">
                             {{ $post->title }}
-                        </div></a>
+                        </div>
+                    </a>
                 </div>
             @endforeach
         </div>

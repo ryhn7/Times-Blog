@@ -6,15 +6,46 @@
         <div class="flex w-3/4 group hover:border-b">
             <div class="w-full h-12">
                 <form action="/search" method="GET">
+                    @if (request('category'))
+                        <input type="hidden" name="category" value="{{ request('category') }}">
+                    @elseif (request('author'))
+                        <input type="hidden" name="author" value="{{ request('author') }}">
+                    @endif
                     <input type="text" id="search" name="search"
                         class="appearance-none bg-transparent border-none w-full text-4xl font-franklin placeholder:text-3xl placeholder:font-imperial placeholder:text-[#B3B3C1] focus:ring-0"
                         placeholder="Search The Times" value="{{ request('search') }}">
+
                 </form>
             </div>
             <button class="w-10 h-full my-auto opacity-60 group-hover:opacity-80 focus:opacity-100" type="submit">
                 <img src="{{ asset('assets/icons/search.png') }}" alt="icon">
             </button>
         </div>
+        {{-- <div class="w-full mt-2">
+            <button id="dropdownCheckboxButton" data-dropdown-toggle="dropdownDefaultCheckbox"
+                class="text-[#666666] text-sm px-1 py-2 text-center font-bold inline-flex items-center"
+                type="button">Section <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg></button>
+
+            <!-- Dropdown menu -->
+            <div id="dropdownDefaultCheckbox"
+                class="z-10 hidden w-48 bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600">
+                <ul class="p-3 space-y-3 text-sm text-gray-700" aria-labelledby="dropdownCheckboxButton">
+                    @foreach ($categories as $category)
+                        <li>
+                            <div class="flex items-center">
+                                <input id="checkbox-item-1" type="checkbox" value="{{ $category->slug }}"
+                                    class="w-4 h-4 text-gray-500 bg-white rounded focus:ring-0">
+                                <label for="checkbox-item-1"
+                                    class="ml-2 text-sm font-imperial">{{ $category->name }}</label>
+                            </div>
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
+        </div> --}}
     </div>
     @if ($posts->count())
         <div class="max-w-full px-80 py-7 mt-3">
@@ -78,5 +109,4 @@
             </div>
         </div>
     @endif
-
 @endsection

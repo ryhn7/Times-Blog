@@ -7,6 +7,7 @@
             @foreach ($categories as $category)
                 <div class="px-2 rounded group hover:bg-slate-200">
                     <a href="/categories/{{ $category->slug }}"
+                    {{-- <a href="/search?category={{ $category->slug }}" --}}
                         class="inline-block py-1 px-auto text-sm group-hover:font-semibold">{{ $category->name }}</a>
                 </div>
             @endforeach
