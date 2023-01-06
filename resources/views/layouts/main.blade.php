@@ -8,6 +8,7 @@
     <title>Times | {{ $title }}</title>
     <link rel="stylesheet" href={{ asset('./css/style.css') }}>
     <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.5/dist/flowbite.min.css" />
+    @livewireStyles
 </head>
 
 <body>
@@ -23,6 +24,7 @@
 
 
     <script src="https://unpkg.com/flowbite@1.5.5/dist/flowbite.js"></script>
+    @livewireScripts
 </body>
 
 </html>
