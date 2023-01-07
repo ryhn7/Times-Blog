@@ -44,6 +44,9 @@ Route::get('post/{post:slug}', [PostController::class, 'show']);
 Route::get('/categories/{category:slug}', [PostController::class, 'category']);
 Route::get('/authors/{author:username}', [PostController::class, 'author']);
 Route::get('/search', [PostController::class, 'search']);
+
 Route::get('/login', [LoginController::class, 'index']);
+
 Route::get('/register', [RegisterController::class, 'index']);
+Route::post('/register', [RegisterController::class, 'store']);
 
