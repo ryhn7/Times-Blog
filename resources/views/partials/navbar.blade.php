@@ -186,6 +186,12 @@
                             clip-rule="evenodd"></path>
                     </svg>
                 </button>
+                <div class="pl-2.5 -mr-4 w-200 my-auto">
+                    <div
+                        class="w-full rounded-md shadow-lg bg-[#567B95] px-2 py-1.5 text-white font-semibold hover:bg-[#346890] focus:bg-[#346890]">
+                        <a href="/login">Log In</a>
+                    </div>
+            </div>
             </div>
             <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-search">
                 <div class="relative mt-3 md:hidden">
@@ -205,7 +211,7 @@
                     </form>
                 </div>
                 <ul
-                    class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white">
+                    class="flex flex-col p-4 mt-4 -translate-x-6 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white">
                     <li>
                         <a href="/home"
                             class="block py-2 pl-3 pr-4 {{ $title === 'Home' ? 'text-[#587B8F]' : 'text-gray-700' }} text-lg font-chelten font-semibold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#346890] md:p-0"
@@ -218,10 +224,6 @@
                     <li>
                         <a href="/"
                             class="block py-2 pl-3 pr-4 {{ $title === 'All Post' ? 'text-[#587B8F]' : 'text-gray-700' }} text-lg font-chelten font-semibold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#346890] md:p-0">Blog</a>
-                    </li>
-                    <li>
-                        <a href="/login"
-                            class="block py-2 pl-3 pr-4 {{ $title === 'SignIn' ? 'text-[#587B8F]' : 'text-gray-700' }} text-lg font-chelten font-semibold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#346890] md:p-0">SignIn</a>
                     </li>
                 </ul>
             </div>
