@@ -28,12 +28,16 @@
                                 class="block font-semibold px-3 py-2 border rounded focus:ring-0">
                         </div>
                         <div class="mt-10 text-sm font-franklin">By creating an account, you agree to the <span
-                                class="underline underline-offset-2 hover:font-semibold hover:cursor-pointer">Terms of Service</span> and
-                            acknowledge our <span class="underline underline-offset-2 hover:font-semibold hover:cursor-pointer">Privacy
+                                class="underline underline-offset-2 hover:font-semibold hover:cursor-pointer">Terms of
+                                Service</span> and
+                            acknowledge our <span
+                                class="underline underline-offset-2 hover:font-semibold hover:cursor-pointer">Privacy
                                 Policy</span>.</div>
                         <button
                             class="mt-3 w-full px-3 py-3 bg-black text-white font-franklin font-bold rounded shadow-md hover:bg-[#333333]">Create
                             Account</button>
+                        <div class="mt-4 text-sm font-franklin text-center">Already Register? <a href="/login"
+                                class="underline underline-offset-2 hover:font-semibold">Log In</a></div>
                     </div>
                 </div>
             </form>
