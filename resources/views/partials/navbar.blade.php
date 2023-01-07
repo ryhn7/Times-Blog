@@ -150,7 +150,7 @@
                     <span class="sr-only">Search</span>
                 </button>
                 <div class="relative hidden md:block">
-                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                    {{-- <div class="absolute inset-y-0 left-0 flex items-center pl-2 pointer-events-none">
                         <svg class="w-5 h-5 text-gray-500" aria-hidden="true" fill="currentColor"
                             viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd"
@@ -158,13 +158,22 @@
                                 clip-rule="evenodd"></path>
                         </svg>
                         <span class="sr-only">Search icon</span>
-                    </div>
+                    </div> --}}
                     <form action="/search" method="GET">
-                        <input type="text" id="search" name="search"
-                            class="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-0"
-                            placeholder="Search..." value="{{ request('search') }}">
-                    </form>
+                        {{-- <input type="text" id="search" name="search"
+                            class="peer cursor-pointer relative z-10 h-9 w-9 rounded-md border bg-transparent pl-12 outline-none focus:block focus:w-full focus:p-2 focus:pl-10 focus:text-sm focus:text-gray-900 focus:border-gray-300 focus:ring-0 focus:rounded-lg"
+                            value="{{ request('search') }}"> --}}
 
+                        {{-- alternatif search --}}
+                        <input type="search" id="search" name="search"
+                            class="peer cursor-pointer relative z-10 h-9 w-9 rounded-md border bg-transparent pl-2 outline-none focus:w-full focus:cursor-text focus:border-gray-300 focus:pl-16 focus:pr-4 focus:text-sm focus:ring-0" />
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="absolute inset-y-0 my-auto -left-1 flex items-center pointer-events-none h-8 w-12 border-r border-transparent px-3.5 stroke-gray-500 peer-focus:border-gray-300"
+                            fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                    </form>
                 </div>
                 <button data-collapse-toggle="navbar-search" type="button"
                     class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
@@ -209,6 +218,10 @@
                     <li>
                         <a href="/"
                             class="block py-2 pl-3 pr-4 {{ $title === 'All Post' ? 'text-[#587B8F]' : 'text-gray-700' }} text-lg font-chelten font-semibold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#346890] md:p-0">Blog</a>
+                    </li>
+                    <li>
+                        <a href="/login"
+                            class="block py-2 pl-3 pr-4 {{ $title === 'SignIn' ? 'text-[#587B8F]' : 'text-gray-700' }} text-lg font-chelten font-semibold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#346890] md:p-0">SignIn</a>
                     </li>
                 </ul>
             </div>
