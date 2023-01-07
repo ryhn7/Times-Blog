@@ -9,7 +9,7 @@
             </div>
             <div class="flex justify-between">
                 <div class="w-1/2 flex-col">
-                    <div class="text-4xl font-franklin font-bold mb-3">{{ $author }}</div>
+                    <div class="text-4xl font-franklin font-extrabold mb-3">{{ $author }}</div>
                     <p class="text-lg text-[#727272] font-chelten">Lorem ipsum dolor sit amet, consectetur adipisicing
                         elit.
                         Unde autem quis

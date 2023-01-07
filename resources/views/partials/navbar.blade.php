@@ -1,21 +1,65 @@
 @if ($title == 'Login' || $title == 'Register')
     <nav class="px-2 sm:px-4 py-2.5 border shadow-lg">
         <div class="container flex flex-wrap items-center justify-center px-44">
-            <a href="/login" class=" my-auto">
-                <img src="{{ asset('assets/img/nyt-logo.svg') }}" class="h-6 mx-auto sm:h-9" width="70%" height="70%" alt="Times Logo" />
+            <a href="/" class=" my-auto">
+                <img src="{{ asset('assets/img/nyt-logo.svg') }}" class="h-6 mx-auto sm:h-9" width="70%" height="70%"
+                    alt="Times Logo" />
             </a>
         </div>
     </nav>
 @else
     <nav class="px-2 sm:px-4 py-2.5">
         @if ($title == 'Search')
-            <div class="container flex flex-wrap items-center justify-start px-44 mx-auto">
+            <div class="container flex flex-wrap items-center justify-between px-44 mx-auto">
                 <a href="/" class="flex items-center">
                     <img src="{{ asset('assets/img/times.svg') }}" class="h-6 mr-3 sm:h-9" alt="Times Logo" />
                     <span class="self-center text-2xl font-chelten whitespace-nowrap">Times</span>
                 </a>
-                <div class="items-center mx-auto -translate-x-[104px] justify-between hidden w-full md:flex md:w-auto md:order-1"
-                    id="navbar-search">
+                <div class="flex md:order-2">
+                    <div class="pl-2.5 -mr-4 w-200 my-auto">
+                        @auth
+                            <div>
+                                <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar"
+                                    class="flex items-center justify-between w-full py-2 pl-3 pr-4 rounded group hover:bg-slate-200 md:border-0 md:p-0 md:w-auto">
+                                    <div class="">
+                                        <span class="inline-block py-1 px-1.5 text-sm group-hover:font-semibold"> Hello,
+                                            {{ auth()->user()->name }}</span>
+                                    </div>
+                                    <svg class="w-5 h-5 ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                </button>
+                                <!-- Dropdown menu -->
+                                <div id="dropdownNavbar"
+                                    class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                                    <ul class="py-1 text-sm text-gray-700 dark:text-gray-400"
+                                        aria-labelledby="dropdownLargeButton">
+                                        <li>
+                                            <a href="/dashboard" class="block px-4 py-2 hover:bg-gray-300">Dashboard</a>
+                                        </li>
+                                    </ul>
+                                    <div class="py-1">
+                                        <form action="/logout" method="POST">
+                                            @csrf
+                                            <button type="submit"
+                                                class="w-full block px-4 py-2 text-sm text-left text-gray-700 hover:bg-gray-300">Log
+                                                Out</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        @else
+                            <div
+                                class="w-full rounded-md shadow-lg bg-[#567B95] px-2 py-1.5 text-white font-semibold hover:bg-[#346890] focus:bg-[#346890]">
+                                <a href="/login">Log In</a>
+                            </div>
+                        @endauth
+                    </div>
+                </div>
+                <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-search">
                     <div class="relative mt-3 md:hidden">
                         <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                             <svg class="w-5 h-5 text-gray-500" aria-hidden="true" fill="currentColor"
@@ -33,7 +77,7 @@
                         </form>
                     </div>
                     <ul
-                        class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white">
+                        class="flex flex-col p-4 mt-4 -translate-x-10 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white">
                         <li>
                             <a href="/home"
                                 class="block py-2 pl-3 pr-4 {{ $title === 'Home' ? 'text-[#587B8F]' : 'text-gray-700' }} text-lg font-chelten font-semibold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#346890] md:p-0"
@@ -56,11 +100,52 @@
                     <img src="{{ asset('assets/img/times.svg') }}" class="h-6 mr-3 sm:h-9" alt="Times Logo" />
                     <span class="self-center text-2xl font-chelten whitespace-nowrap">Times</span>
                 </a>
-                <div class="w-200 h-30 md:order-2">
-                    <div class="w-full h-full bg-transparent px-2 py-1 text-transparent">
-                        Filter Search</div>
+                <div class="flex md:order-2">
+                    <div class="pl-2.5 -mr-4 w-200 my-auto">
+                        @auth
+                            <div>
+                                <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar"
+                                    class="flex items-center justify-between w-full py-2 pl-3 pr-4 rounded group hover:bg-slate-200 md:border-0 md:p-0 md:w-auto">
+                                    <div class="">
+                                        <span class="inline-block py-1 px-1.5 text-sm group-hover:font-semibold"> Hello,
+                                            {{ auth()->user()->name }}</span>
+                                    </div>
+                                    <svg class="w-5 h-5 ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                </button>
+                                <!-- Dropdown menu -->
+                                <div id="dropdownNavbar"
+                                    class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                                    <ul class="py-1 text-sm text-gray-700 dark:text-gray-400"
+                                        aria-labelledby="dropdownLargeButton">
+                                        <li>
+                                            <a href="/dashboard" class="block px-4 py-2 hover:bg-gray-300">Dashboard</a>
+                                        </li>
+                                    </ul>
+                                    <div class="py-1">
+                                        <form action="/logout" method="POST">
+                                            @csrf
+                                            <button type="submit"
+                                                class="w-full block px-4 py-2 text-sm text-left text-gray-700 hover:bg-gray-300">Log
+                                                Out</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        @else
+                            <div
+                                class="w-full rounded-md shadow-lg bg-[#567B95] px-2 py-1.5 text-white font-semibold hover:bg-[#346890] focus:bg-[#346890]">
+                                <a href="/login">Log In</a>
+                            </div>
+                        @endauth
+                    </div>
                 </div>
-                <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-search">
+                <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+                    id="navbar-search">
                     <div class="relative mt-3 md:hidden">
                         <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                             <svg class="w-5 h-5 text-gray-500" aria-hidden="true" fill="currentColor"
@@ -78,7 +163,7 @@
                         </form>
                     </div>
                     <ul
-                        class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white">
+                        class="flex flex-col p-4 mt-4 -translate-x-10 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white">
                         <li>
                             <a href="/home"
                                 class="block py-2 pl-3 pr-4 {{ $title === 'Home' ? 'text-[#587B8F]' : 'text-gray-700' }} text-lg font-chelten font-semibold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#346890] md:p-0"
@@ -101,11 +186,52 @@
                     <img src="{{ asset('assets/img/times.svg') }}" class="h-6 mr-3 sm:h-9" alt="Times Logo" />
                     <span class="self-center text-2xl font-chelten whitespace-nowrap">Times</span>
                 </a>
-                <div class="w-200 h-30 md:order-2">
-                    <div class="w-full h-full bg-transparent px-2 py-1 text-transparent">
-                        Filter Search</div>
+                <div class="flex md:order-2">
+                    <div class="pl-2.5 -mr-4 w-200 my-auto">
+                        @auth
+                            <div>
+                                <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar"
+                                    class="flex items-center justify-between w-full py-2 pl-3 pr-4 rounded group hover:bg-slate-200 md:border-0 md:p-0 md:w-auto">
+                                    <div class="">
+                                        <span class="inline-block py-1 px-1.5 text-sm group-hover:font-semibold"> Hello,
+                                            {{ auth()->user()->name }}</span>
+                                    </div>
+                                    <svg class="w-5 h-5 ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                </button>
+                                <!-- Dropdown menu -->
+                                <div id="dropdownNavbar"
+                                    class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                                    <ul class="py-1 text-sm text-gray-700 dark:text-gray-400"
+                                        aria-labelledby="dropdownLargeButton">
+                                        <li>
+                                            <a href="/dashboard" class="block px-4 py-2 hover:bg-gray-300">Dashboard</a>
+                                        </li>
+                                    </ul>
+                                    <div class="py-1">
+                                        <form action="/logout" method="POST">
+                                            @csrf
+                                            <button type="submit"
+                                                class="w-full block px-4 py-2 text-sm text-left text-gray-700 hover:bg-gray-300">Log
+                                                Out</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        @else
+                            <div
+                                class="w-full rounded-md shadow-lg bg-[#567B95] px-2 py-1.5 text-white font-semibold hover:bg-[#346890] focus:bg-[#346890]">
+                                <a href="/login">Log In</a>
+                            </div>
+                        @endauth
+                    </div>
                 </div>
-                <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-search">
+                <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+                    id="navbar-search">
                     <div class="relative mt-3 md:hidden">
                         <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                             <svg class="w-5 h-5 text-gray-500" aria-hidden="true" fill="currentColor"
@@ -123,7 +249,7 @@
                         </form>
                     </div>
                     <ul
-                        class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white">
+                        class="flex flex-col p-4 mt-4 -translate-x-10 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white">
                         <li>
                             <a href="/home"
                                 class="block py-2 pl-3 pr-4 {{ $title === 'Home' ? 'text-[#587B8F]' : 'text-gray-700' }} text-lg font-chelten font-semibold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#346890] md:p-0"
@@ -140,7 +266,6 @@
                     </ul>
                 </div>
             </div>
-
         @else
             <div class="container flex flex-wrap items-center justify-between px-44 mx-auto">
                 <a href="/" class="flex items-center">
@@ -197,10 +322,46 @@
                         </svg>
                     </button>
                     <div class="pl-2.5 -mr-4 w-200 my-auto">
-                        <div
-                            class="w-full rounded-md shadow-lg bg-[#567B95] px-2 py-1.5 text-white font-semibold hover:bg-[#346890] focus:bg-[#346890]">
-                            <a href="/login">Log In</a>
-                        </div>
+                        @auth
+                            <div>
+                                <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar"
+                                    class="flex items-center justify-between w-full py-2 pl-3 pr-4 rounded group hover:bg-slate-200 md:border-0 md:p-0 md:w-auto">
+                                    <div class="">
+                                        <span class="inline-block py-1 px-1.5 text-sm group-hover:font-semibold"> Hello,
+                                            {{ auth()->user()->name }}</span>
+                                    </div>
+                                    <svg class="w-5 h-5 ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                </button>
+                                <!-- Dropdown menu -->
+                                <div id="dropdownNavbar"
+                                    class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                                    <ul class="py-1 text-sm text-gray-700 dark:text-gray-400"
+                                        aria-labelledby="dropdownLargeButton">
+                                        <li>
+                                            <a href="/dashboard" class="block px-4 py-2 hover:bg-gray-300">Dashboard</a>
+                                        </li>
+                                    </ul>
+                                    <div class="py-1">
+                                        <form action="/logout" method="POST">
+                                            @csrf
+                                            <button type="submit"
+                                                class="w-full block px-4 py-2 text-sm text-left text-gray-700 hover:bg-gray-300">Log
+                                                Out</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        @else
+                            <div
+                                class="w-full rounded-md shadow-lg bg-[#567B95] px-2 py-1.5 text-white font-semibold hover:bg-[#346890] focus:bg-[#346890]">
+                                <a href="/login">Log In</a>
+                            </div>
+                        @endauth
                     </div>
                 </div>
                 <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
@@ -221,8 +382,8 @@
                                 placeholder="Search... "value="{{ request('search') }}">
                         </form>
                     </div>
-                    <ul
-                        class="flex flex-col p-4 mt-4 -translate-x-6 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white">
+                    <ul class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white"
+                        id="menu">
                         <li>
                             <a href="/home"
                                 class="block py-2 pl-3 pr-4 {{ $title === 'Home' ? 'text-[#587B8F]' : 'text-gray-700' }} text-lg font-chelten font-semibold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#346890] md:p-0"

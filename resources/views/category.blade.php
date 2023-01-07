@@ -3,7 +3,7 @@
 @section('container')
     <div class="max-w-full px-44 mb-5">
         <div class="flex justify-between">
-            <h1 class="text-4xl mb-3 font-franklin">{{ $titles }}</h1>
+            <h1 class="text-4xl mb-3 font-franklin font-extrabold">{{ $titles }}</h1>
             <div class="w-200 my-auto">
                     <div
                         class="w-full rounded-md shadow-lg bg-[#567B95] px-2 py-1 text-white font-semibold hover:bg-[#346890] focus:bg-[#346890]">
