@@ -327,7 +327,7 @@
                                 <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar"
                                     class="flex items-center justify-between w-full py-2 pl-3 pr-4 rounded group hover:bg-slate-200 md:border-0 md:p-0 md:w-auto">
                                     <div class="">
-                                        <span class="inline-block py-1 px-1.5 text-sm group-hover:font-semibold"> Hello,
+                                        <span class="inline-block py-1 px-2 text-sm group-hover:font-semibold"> Hello,
                                             {{ auth()->user()->name }}</span>
                                     </div>
                                     <svg class="w-5 h-5 ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
