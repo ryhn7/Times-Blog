@@ -2,7 +2,7 @@
 
 @section('menu')
     <div class="px-44 py-2 max-w-full">
-        <hr class="mb-2 border-t-1 border-slate-300">
+        <hr class="mb-2 border-t-1 border-slate-100">
         <div class="flex">
             @foreach ($categories as $category)
                 <div class="px-2 rounded group hover:bg-slate-200">
@@ -18,7 +18,7 @@
 
 @section('container')
     @if ($posts->count())
-        <div class="max-w-full px-44 py-3 font-imperial">
+        <div class="max-w-full px-40 py-3 font-imperial">
             <div class="flex">
                 {{-- Right --}}
                 <div class="flex-col w-[70%]">

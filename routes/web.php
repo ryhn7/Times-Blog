@@ -38,6 +38,11 @@ Route::get('/about', function () {
     ]);
 });
 
+Route::get('/dashboard', fn () => view('dashboard.index', [
+    'title' => 'Dashboard'
+]))->middleware(['auth'])->name('dashboard');
+
+
 
 Route::get('/', [PostController::class, 'index']);
 // Route::get('/posts', [PostController::class, 'index']);
@@ -52,5 +57,3 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout')->midd
 
 Route::get('/register', [RegisterController::class, 'index'])->name('register')->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
-
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');

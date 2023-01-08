@@ -10,7 +10,7 @@
                         <input type="hidden" name="author" value="{{ request('author') }}">
                     @endif
                     <input type="text" id="search" name="search"
-                        class="appearance-none bg-transparent border-none w-full text-4xl font-franklin placeholder:text-3xl placeholder:font-imperial placeholder:text-[#B3B3C1] focus:ring-0"
+                        class="appearance-none bg-transparent border-none w-full text-4xl font-franklin font-extrabold placeholder:text-3xl placeholder:font-imperial placeholder:text-[#B3B3C1] focus:ring-0"
                         placeholder="Search The Times" value="{{ request('search') }}">
 
                 </form>
