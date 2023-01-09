@@ -4,14 +4,25 @@
             <div class="flex items-center justify-between w-full px-4 py-1 mx-auto flex-wrap-inherit">
                 <nav>
                     <!-- breadcrumb -->
-                    <ol class="flex flex-wrap pt-1 mr-12 bg-transparent rounded-lg sm:mr-16">
-                        <li class="leading-normal text-sm">
-                            <a class="opacity-50 text-slate-700" href="javascript:;">Pages</a>
-                        </li>
-                        <li class="text-sm pl-2 capitalize leading-normal text-slate-700 before:float-left before:pr-2 before:text-gray-600 before:content-['/']"
-                            aria-current="page">Dashboard</li>
-                    </ol>
-                    <h6 class="mb-0 font-bold capitalize">Dashboard</h6>
+                    @if (Request::is('dashboard'))
+                        <ol class="flex flex-wrap pt-1 mr-12 bg-transparent rounded-lg sm:mr-16">
+                            <li class="leading-normal text-sm">
+                                <a class="opacity-50 text-slate-700" href="/dashboard">Pages</a>
+                            </li>
+                            <li class="text-sm pl-2 capitalize leading-normal text-slate-700 before:float-left before:pr-2 before:text-gray-600 before:content-['/']"
+                                aria-current="page">Dashboard</li>
+                        </ol>
+                        <h6 class="mb-0 font-bold capitalize mt-1">Dashboard</h6>
+                    @elseif (Request::is('dashboard/posts'))
+                        <ol class="flex flex-wrap pt-1 mr-12 bg-transparent rounded-lg sm:mr-16">
+                            <li class="leading-normal text-sm">
+                                <a class="opacity-50 text-slate-700" href="/dashboard/posts">Pages</a>
+                            </li>
+                            <li class="text-sm pl-2 capitalize leading-normal text-slate-700 before:float-left before:pr-2 before:text-gray-600 before:content-['/']"
+                                aria-current="page">My Posts</li>
+                        </ol>
+                        <h6 class="mb-0 font-bold capitalize mt-1">My Posts</h6>
+                    @endif
                 </nav>
 
                 <div class="flex items-center mt-2 grow sm:mt-0 sm:mr-6 md:mr-0 lg:flex lg:basis-auto">
@@ -29,11 +40,13 @@
                     <ul class="flex flex-row justify-end pl-0 mb-0 list-none md-max:w-full">
                         <!-- online builder btn  -->
                         <li class="flex items-center">
-                            <a href="../pages/sign-in.html"
-                                class="block px-0 py-2 font-semibold transition-all ease-nav-brand text-sm text-slate-500">
-                                <i class="fa fa-user sm:mr-1"></i>
-                                <span class="hidden sm:inline">Log Out</span>
-                            </a>
+                            <form action="/logout" method="POST" class="">
+                                @csrf
+                                <button
+                                    class="block px-2 py-1 font-semibold transition-all ease-nav-brand text-sm text-slate-500 rounded-md group hover:bg-slate-200">
+                                    <i class="fa fa-user sm:mr-1"></i>
+                                    <span class="hidden sm:inline group-hover:text-black">Log Out</span></button>
+                            </form>
                         </li>
                         <li class="flex items-center pl-4 xl:hidden">
                             <a href="javascript:;"
