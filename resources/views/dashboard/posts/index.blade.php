@@ -2,8 +2,18 @@
 
 @section('container')
     <div class="w-full px-3 overflow-hidden rounded-lg shadow-xs">
+        @if (session()->has('success'))
+            <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-3" role="alert">
+                <strong class="font-bold">Woaa!</strong>
+                <span class="block sm:inline">{{ session('success') }}</span>
+                <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
+                </span>
+            </div>
+        @endif
+
         <div class="flex justify-end mb-5 mr-1">
-            <div class="flex w-30 px-2 py-1 rounded-md shadow-lg text-center group bg-gradient-to-tl from-sky-500 to-teal-500 hover:bg-gradient-to-tl hover:from-sky-600 hover:to-teal-600">
+            <div
+                class="flex w-30 px-2 py-1 rounded-md shadow-lg text-center group bg-gradient-to-tl from-sky-500 to-teal-500 hover:bg-gradient-to-tl hover:from-sky-600 hover:to-teal-600">
                 <div class="mr-3 self-center">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0,0,256,256"
                         width="20px" height="20px" fill-rule="nonzero">
@@ -19,7 +29,8 @@
                         </g>
                     </svg>
                 </div>
-                <div class="text-sm text-white font-semibold group-hover:font-bold"><a href="dashboard/posts/create">Add Post</a></div>
+                <div class="text-sm text-white font-semibold group-hover:font-bold"><a href="/dashboard/posts/create">Add
+                        Post</a></div>
             </div>
         </div>
         <div class="w-full overflow-x-auto rounded shadow-lg">

@@ -6,6 +6,7 @@ use App\Models\Post;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
+use Illuminate\Support\Str;
 
 class DashboardPostController extends Controller
 {
@@ -41,7 +42,20 @@ class DashboardPostController extends Controller
      */
     public function store(Request $request)
     {
-        return $request;
+        $validated = $request->validate([
+            'title' => 'required|max:255',
+            'slug' => 'required|unique:posts',
+            'category_id' => 'required',
+            'body' => 'required',
+        ]);
+
+        $validated['user_id'] = auth()->user()->id;
+
+        $validated['excerpt'] = Str::limit(strip_tags($validated['body'], 150));
+
+        Post::create($validated);
+
+        return redirect('/dashboard/posts')->with('success', 'Post created successfully!');
     }
 
     /**
