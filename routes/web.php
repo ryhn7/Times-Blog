@@ -58,4 +58,5 @@ Route::post('/logout', [LoginController::class, 'logout'])->middleware('auth')->
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest')->name('register');
 Route::post('/register', [RegisterController::class, 'store']);
 
+Route::get('/dashboard/posts/generateSlug', [DashboardPostController::class, 'generateSlug'])->middleware('auth');
 Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');

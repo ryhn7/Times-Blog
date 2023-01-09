@@ -2,6 +2,26 @@
 
 @section('container')
     <div class="w-full px-3 overflow-hidden rounded-lg shadow-xs">
+        <div class="flex justify-end mb-5 mr-1">
+            <div class="flex w-30 px-2 py-1 rounded-md shadow-lg text-center group bg-gradient-to-tl from-sky-500 to-teal-500 hover:bg-gradient-to-tl hover:from-sky-600 hover:to-teal-600">
+                <div class="mr-3 self-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0,0,256,256"
+                        width="20px" height="20px" fill-rule="nonzero">
+                        <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                            stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                            font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                            style="mix-blend-mode: normal">
+                            <g transform="scale(9.84615,9.84615)">
+                                <path
+                                    d="M19,3h-12c-2.19922,0 -4,1.80078 -4,4v12c0,2.19922 1.80078,4 4,4h12c2.19922,0 4,-1.80078 4,-4v-12c0,-2.19922 -1.80078,-4 -4,-4zM19,14h-5v5h-2v-5h-5v-2h5v-5h2v5h5z">
+                                </path>
+                            </g>
+                        </g>
+                    </svg>
+                </div>
+                <div class="text-sm text-white font-semibold group-hover:font-bold"><a href="dashboard/posts/create">Add Post</a></div>
+            </div>
+        </div>
         <div class="w-full overflow-x-auto rounded shadow-lg">
             <table class="bg-white w-full whitespace-no-wrap">
                 <thead>

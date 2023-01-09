@@ -16,13 +16,13 @@
         <div class="items-center block w-auto max-h-screen overflow-auto h-sidenav grow basis-full">
             <ul class="flex flex-col pl-0 mb-0">
                 <li class="mt-0.5 w-full">
-                    <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap rounded-lg px-4 {{ Request::is('dashboard') ? 'shadow-soft-xl bg-white font-semibold text-slate-700' : '' }} transition-colors"
+                    <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap rounded-lg px-4 {{ request()->is('dashboard') ? 'shadow-soft-xl bg-white font-semibold text-slate-700' : '' }} transition-colors"
                         href="/dashboard">
                         <div
-                            class="{{ Request::is('dashboard') ? 'bg-gradient-to-tl from-gray-900 to-slate-800 opacity-80 ' : '' }} shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
+                            class="{{ request()->is('dashboard') ? 'bg-gradient-to-tl from-gray-900 to-slate-800 opacity-80 ' : '' }} shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                 viewBox="0,0,256,256" width="12px" height="12px" fill-rule="nonzero">
-                                <g fill="{{ Request::is('dashboard') ? '#ffffff' : '#000000' }}" fill-rule="nonzero"
+                                <g fill="{{ request()->is('dashboard') ? '#ffffff' : '#000000' }}" fill-rule="nonzero"
                                     stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter"
                                     stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none"
                                     font-weight="none" font-size="none" text-anchor="none"
@@ -40,13 +40,13 @@
                 </li>
 
                 <li class="mt-0.5 w-full">
-                    <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap rounded-lg px-4 {{ Request::is('dashboard/posts') ? 'shadow-soft-xl bg-white font-semibold text-slate-700' : '' }} transition-colors"
+                    <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap rounded-lg px-4 {{ request()->is('dashboard/posts*') ? 'shadow-soft-xl bg-white font-semibold text-slate-700' : '' }} transition-colors"
                         href="/dashboard/posts">
                         <div
-                            class="{{ Request::is('dashboard/posts') ? 'bg-gradient-to-tl from-gray-900 to-slate-800 opacity-80 ' : '' }} shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
+                            class="{{ request()->is('dashboard/posts*') ? 'bg-gradient-to-tl from-gray-900 to-slate-800 opacity-80 ' : '' }} shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                 viewBox="0,0,256,256" width="12px" height="12px" fill-rule="nonzero">
-                                <g fill="{{ Request::is('dashboard/posts') ? '#FFFFFF' : '#000000' }}" fill-rule="nonzero"
+                                <g fill="{{ request()->is('dashboard/posts*') ? '#FFFFFF' : '#000000' }}" fill-rule="nonzero"
                                     stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter"
                                     stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none"
                                     font-weight="none" font-size="none" text-anchor="none"
