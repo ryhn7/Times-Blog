@@ -5,7 +5,13 @@
         <div class="w-1/2 h-auto text-4xl font-bold mt-12 mx-auto">{{ $post->title }}</div>
         <div class="w-1/2 text-2xl mt-7 mx-auto text-[#333333]">{{ $post->excerpt }}</div>
         <div class="w-3/4 mt-10 mx-auto">
-            <img src="https://source.unsplash.com/1000x650?{{ $post->category->name }}" alt="image" class="rounded shadow-lg">
+            @if ($post->image)
+                <img src="{{ asset('images/' . $post->image) }}" alt="image" class="rounded shadow-lg" width="1000px"
+                    height="650px">
+            @else
+                <img src="https://source.unsplash.com/1000x650?{{ $post->category->name }}" alt="image"
+                    class="rounded shadow-lg">
+            @endif
         </div>
         <div class="flex w-1/2 mt-8 mx-auto">
             <div class="flex items-center justify-center w-10 h-10 rounded-full mr-3 border border-slate-500">

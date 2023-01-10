@@ -46,8 +46,18 @@ class DashboardPostController extends Controller
             'title' => 'required|max:255',
             'slug' => 'required|unique:posts',
             'category_id' => 'required',
+            'image' => 'image|file|max:2048',
             'body' => 'required',
         ]);
+
+        if ($request->file('image')) {
+            $image = $request->file('image');
+            $name = time() . '.' . $image->getClientOriginalExtension();
+            $destinationPath = public_path('/images');
+            $image->move($destinationPath, $name);
+            $validated['image'] = $name;
+            // $validated['image'] = $request->file('image')->store('images', 'public');
+        }
 
         $validated['user_id'] = auth()->user()->id;
 

@@ -36,8 +36,13 @@
                                 </div>
                             </div>
                             <div class="w-2/3">
-                                <img src="https://source.unsplash.com/550x350?{{ $posts[0]->category->name }}"
-                                    alt="image" class="rounded shadow-lg">
+                                @if ($posts[0]->image)
+                                    <img src="{{ asset('images/' . $posts[0]->image) }}" alt="image"
+                                        class="rounded shadow-lg" width="550px" height="350px">
+                                @else
+                                    <img src="https://source.unsplash.com/550x350?{{ $posts[0]->category->name }}"
+                                        alt="image" class="rounded shadow-lg">
+                                @endif
                                 <div class="flex text-xs text-slate-600 w-full mt-1 px-0.5 justify-end">Source</div>
                             </div>
                         </div>
@@ -58,8 +63,13 @@
                                     </div>
                                 </div>
                                 <div class="w-2/3">
-                                    <img src="https://source.unsplash.com/550x350?{{ $post->category->name }}"
-                                        alt="image" class="rounded shadow-lg">
+                                    @if ($post->image)
+                                        <img src="{{ asset('images/' . $post->image) }}" alt="image"
+                                            class="rounded shadow-lg" width="550px" height="350px">
+                                    @else
+                                        <img src="https://source.unsplash.com/550x350?{{ $post->category->name }}"
+                                            alt="image" class="rounded shadow-lg">
+                                    @endif
                                     <div class="flex text-xs text-slate-600 w-full mt-1 px-0.5 justify-end">Source</div>
                                 </div>
                             </div>
@@ -74,7 +84,13 @@
                     @foreach ($posts as $post)
                         <div class="mb-5">
                             <div class="w-full">
-                                <img src="https://source.unsplash.com/400x250?{{ $post->category->name }}" alt="image" class="rounded shadow-lg">
+                                @if ($post->image)
+                                    <img src="{{ asset('images/' . $post->image) }}" alt="image"
+                                        class="rounded shadow-lg" width="400px" height="250px">
+                                @else
+                                    <img src="https://source.unsplash.com/400x250?{{ $post->category->name }}"
+                                        alt="image" class="rounded shadow-lg">
+                                @endif
                                 <div class="flex text-xs text-slate-600 w-full mt-1 px-0.5 justify-end">Source</div>
                             </div>
                             <h3 class="text-2xl font-semibold mt-3 mb-2 group"><a href="/post/{{ $post->slug }}"

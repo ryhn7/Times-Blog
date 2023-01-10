@@ -2,7 +2,7 @@
 
 @section('container')
     <div class="px-4 py-3 mb-8 bg-white rounded-lg shadow-md">
-        <form action="/dashboard/posts" method="POST">
+        <form action="/dashboard/posts" method="POST" enctype="multipart/form-data">
             @csrf
             <div>
                 <label for="title" class="block text-sm">
@@ -19,7 +19,7 @@
                 <label for="slug" class="block mt-4 text-sm">
                     <span class="text-gray-700 font-semibold">Slug</span>
                     <input type="text" id="slug" name="slug" required value="{{ old('slug') }}"
-                        class="block px-2 py-1 w-full mt-1 text-sm border border-gray-500 rounded @error('slug')
+                        class="block px-2 py-1 w-full mt-1 text-sm border border border-gray-500 rounded focus:border-sky-800 focus:outline-none focus:shadow-sm focus:shadow-[#2c3e50] focus:transition-shadow @error('slug')
                         border-red-600 focus:border-red-600 focus:ring-red-600
                         @enderror" />
                     @error('slug')
@@ -43,6 +43,21 @@
                         @endforeach
                     </select>
                     @error('category_id')
+                        <p class="text-xs mt-1 text-red-700 font-franklin">{{ $message }}</p>
+                    @enderror
+                </label>
+
+                <label for="image" class="block text-sm mt-4">
+                    <span class="text-gray-700 font-semibold">
+                        Post Cover Image
+                    </span>
+                    <input
+                        class="block w-full text-sm mt-1 cursor-pointer border border-gray-500 rounded focus:border-sky-800 focus:outline-none focus:shadow-sm focus:shadow-[#2c3e50] focus:transition-shadow file:rounded file:border-0
+                        file:text-sm file:text-white file:px-2 file:py-1 file:cursor-pointer file:bg-gradient-to-tl from-gray-900 to-slate-800 file:opacity-90 hover:font-semibold hover:opacity-100 @error('image')
+                        border-red-600 focus:border-red-600 focus:ring-red-600
+                        @enderror"
+                        type="file" id="image" name="image" />
+                    @error('image')
                         <p class="text-xs mt-1 text-red-700 font-franklin">{{ $message }}</p>
                     @enderror
                 </label>
