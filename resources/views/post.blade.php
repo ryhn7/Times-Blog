@@ -2,8 +2,8 @@
 
 @section('container')
     <div class="max-w-full px-44 py-3 font-chelten">
-        <div class="w-1/2 h-24 text-4xl font-bold mt-12 mx-auto">{{ $post->title }}</div>
-        <div class="w-1/2 text-2xl mt-3 mx-auto text-[#333333]">{{ $post->excerpt }}</div>
+        <div class="w-1/2 h-auto text-4xl font-bold mt-12 mx-auto">{{ $post->title }}</div>
+        <div class="w-1/2 text-2xl mt-7 mx-auto text-[#333333]">{{ $post->excerpt }}</div>
         <div class="w-3/4 mt-10 mx-auto">
             <img src="https://source.unsplash.com/1000x650?{{ $post->category->name }}" alt="image" class="rounded shadow-lg">
         </div>

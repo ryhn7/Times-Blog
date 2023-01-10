@@ -31,7 +31,7 @@
                                 aria-current="page">Create Post</li>
                         </ol>
                         <h6 class="mb-0 font-bold capitalize mt-1">Create Post</h6>
-                    @elseif (request()->is('dashboard/posts/edit'))
+                    @elseif (request()->is('dashboard/posts*'))
                         <ol class="flex flex-wrap pt-1 mr-12 bg-transparent rounded-lg sm:mr-16">
                             <li class="leading-normal text-sm">
                                 <a class="opacity-50 text-slate-700" href="/dashboard/posts">Pages</a>

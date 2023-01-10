@@ -51,7 +51,7 @@ class DashboardPostController extends Controller
 
         $validated['user_id'] = auth()->user()->id;
 
-        $validated['excerpt'] = Str::limit(strip_tags($validated['body'], 150));
+        $validated['excerpt'] = Str::limit(strip_tags($request->body), 150, '.');
 
         Post::create($validated);
 
@@ -66,6 +66,11 @@ class DashboardPostController extends Controller
      */
     public function show(Post $post)
     {
+
+        if ($post->author->id != auth()->user()->id) {
+            abort(403, 'You are not authorized to access this resource!');
+        }
+
         return $post;
         return view('dashboard.posts.show', [
             'post' => $post,
@@ -80,7 +85,14 @@ class DashboardPostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        if ($post->author->id != auth()->user()->id) {
+            abort(403, 'You are not authorized to access this resource!');
+        }
+
+        return view('dashboard.posts.edit', [
+            'post' => $post,
+            'categories' => Category::all(),
+        ]);
     }
 
     /**
@@ -92,12 +104,30 @@ class DashboardPostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+        $rules = [
+            'title' => 'required|max:255',
+            'category_id' => 'required',
+            'body' => 'required',
+        ];
+
+        if ($request->slug != $post->slug) {
+            $rules['slug'] = 'required|unique:posts';
+        }
+
+        $validated = $request->validate($rules);
+
+        $validated['user_id'] = auth()->user()->id;
+
+        $validated['excerpt'] = Str::limit(strip_tags($request->body), 150, '.');
+
+        Post::where('id', $post->id)->update($validated);
+
+        return redirect('/dashboard/posts')->with('success', 'Post updated successfully!');
     }
 
     /**
      * Remove the specified resource from storage.
-     *
+     * 
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
