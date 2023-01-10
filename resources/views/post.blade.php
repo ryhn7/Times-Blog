@@ -6,7 +6,7 @@
         <div class="w-1/2 text-2xl mt-7 mx-auto text-[#333333]">{{ $post->excerpt }}</div>
         <div class="w-3/4 mt-10 mx-auto">
             @if ($post->image)
-                <img src="{{ asset('images/' . $post->image) }}" alt="image" class="rounded shadow-lg" width="1000px"
+                <img src="{{ asset('storage/' . $post->image) }}" alt="image" class="rounded shadow-lg" width="1000px"
                     height="650px">
             @else
                 <img src="https://source.unsplash.com/1000x650?{{ $post->category->name }}" alt="image"
@@ -21,6 +21,6 @@
                     class="hover:underline underline-offset-2">{{ $post->author->name }}</a></div>
         </div>
         <div class="flex w-1/2 mt-2 mx-auto text-xs">{{ $post->created_at->toFormattedDateString() }}</div>
-        <div class="w-1/2 mt-8 mx-auto text-xl text-slate-700">{!! $post->body !!}</div>
+        <div class="w-1/2 mt-8 mb-7 mx-auto text-xl text-slate-700">{!! $post->body !!}</div>
     </div>
 @endsection

@@ -37,7 +37,7 @@
                             </div>
                             <div class="w-2/3">
                                 @if ($posts[0]->image)
-                                    <img src="{{ asset('images/' . $posts[0]->image) }}" alt="image"
+                                    <img src="{{ asset('storage/' . $posts[0]->image) }}" alt="image"
                                         class="rounded shadow-lg" width="550px" height="350px">
                                 @else
                                     <img src="https://source.unsplash.com/550x350?{{ $posts[0]->category->name }}"
@@ -64,7 +64,7 @@
                                 </div>
                                 <div class="w-2/3">
                                     @if ($post->image)
-                                        <img src="{{ asset('images/' . $post->image) }}" alt="image"
+                                        <img src="{{ asset('storage/' . $post->image) }}" alt="image"
                                             class="rounded shadow-lg" width="550px" height="350px">
                                     @else
                                         <img src="https://source.unsplash.com/550x350?{{ $post->category->name }}"
@@ -85,7 +85,7 @@
                         <div class="mb-5">
                             <div class="w-full">
                                 @if ($post->image)
-                                    <img src="{{ asset('images/' . $post->image) }}" alt="image"
+                                    <img src="{{ asset('storage/' . $post->image) }}" alt="image"
                                         class="rounded shadow-lg" width="400px" height="250px">
                                 @else
                                     <img src="https://source.unsplash.com/400x250?{{ $post->category->name }}"

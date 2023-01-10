@@ -21,7 +21,7 @@
                     <div class="flex mr-5 mb-5">
                         <div class="w-2/3">
                             @if ($posts[0]->image)
-                                <img src="{{ asset('images/' . $posts[0]->image) }}" alt="image"
+                                <img src="{{ asset('storage/' . $posts[0]->image) }}" alt="image"
                                     class="rounded shadow-lg" width="600px" height="350px">
                             @else
                                 <img src="https://source.unsplash.com/600x350?{{ $posts[0]->category->name }}"
@@ -42,7 +42,7 @@
                         <div class="w-1/3 pl-5">
                             <div class="w-full">
                                 @if ($posts[0]->image)
-                                    <img src="{{ asset('images/' . $posts[0]->image) }}" alt="image"
+                                    <img src="{{ asset('storage/' . $posts[0]->image) }}" alt="image"
                                         class="rounded shadow-lg" width="400px" height="250px">
                                 @else
                                     <img src="https://source.unsplash.com/400x250?{{ $posts[0]->category->name }}"
@@ -73,7 +73,7 @@
                     <div class="grid grid-cols-1">
                         <div class="flex justify-start">
                             @if ($posts[0]->image)
-                                <img src="{{ asset('images/' . $posts[0]->image) }}" alt="image"
+                                <img src="{{ asset('storage/' . $posts[0]->image) }}" alt="image"
                                     class="rounded shadow-lg" width="75px" height="75px">
                             @else
                                 <img src="https://source.unsplash.com/75x75?{{ $posts[0]->category->name }}" alt="image"
@@ -98,7 +98,7 @@
                     <a href="/post/{{ $post->slug }}" class="group">
                         <div class="w-full mb-2">
                             @if ($post->image)
-                                <img src="{{ asset('images/' . $post->image) }}" alt="image" class="rounded shadow-lg"
+                                <img src="{{ asset('storage/' . $post->image) }}" alt="image" class="rounded shadow-lg"
                                     width="220px" height="150px">
                             @else
                                 <img src="https://source.unsplash.com/220x150?{{ $post->category->name }}" alt="image"

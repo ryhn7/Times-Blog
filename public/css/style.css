@@ -567,6 +567,10 @@ video {
   pointer-events: none;
 }
 
+.visible {
+  visibility: visible;
+}
+
 .invisible {
   visibility: hidden;
 }
@@ -716,6 +720,21 @@ video {
 .mx-4 {
   margin-left: 1rem;
   margin-right: 1rem;
+}
+
+.mx-5 {
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
+}
+
+.my-5 {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.my-7 {
+  margin-top: 1.75rem;
+  margin-bottom: 1.75rem;
 }
 
 .mb-4 {
@@ -3322,6 +3341,10 @@ video {
 
   .sm\:grid-cols-9 {
     grid-template-columns: repeat(9, minmax(0, 1fr));
+  }
+
+  .sm\:flex-row {
+    flex-direction: row;
   }
 
   .sm\:justify-end {

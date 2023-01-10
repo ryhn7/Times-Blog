@@ -46,11 +46,11 @@
                             class="{{ request()->is('dashboard/posts*') ? 'bg-gradient-to-tl from-gray-900 to-slate-800 opacity-80 ' : '' }} shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                 viewBox="0,0,256,256" width="12px" height="12px" fill-rule="nonzero">
-                                <g fill="{{ request()->is('dashboard/posts*') ? '#FFFFFF' : '#000000' }}" fill-rule="nonzero"
-                                    stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter"
-                                    stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none"
-                                    font-weight="none" font-size="none" text-anchor="none"
-                                    style="mix-blend-mode: normal">
+                                <g fill="{{ request()->is('dashboard/posts*') ? '#FFFFFF' : '#000000' }}"
+                                    fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                                    stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray=""
+                                    stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none"
+                                    text-anchor="none" style="mix-blend-mode: normal">
                                     <g transform="scale(4,4)">
                                         <path
                                             d="M16,4v42h32v-34h-7c-0.55228,0 -1,-0.44772 -1,-1v-7zM42,5.41406v4.58594h4.58594zM19,6h10c0.55228,0 1,0.44772 1,1v8c0,0.55228 -0.44772,1 -1,1h-10c-0.55228,0 -1,-0.44772 -1,-1v-8c0,-0.55228 0.44772,-1 1,-1zM20,8v6h8v-6zM32,8h2v2h-2zM36,8h2v2h-2zM32,12h2v2h-2zM36,12h4v2h-4zM4,14v36h56v-36h-10v2h7c0.55228,0 1,0.44772 1,1v30c0,0.55228 -0.44772,1 -1,1h-50c-0.55228,0 -1,-0.44772 -1,-1v-30c0,-0.55228 0.44772,-1 1,-1h7v-2zM8,18v28h6v-28zM19,18h10c0.55228,0 1,0.44772 1,1v12c0,0.55228 -0.44772,1 -1,1h-10c-0.55228,0 -1,-0.44772 -1,-1v-12c0,-0.55228 0.44772,-1 1,-1zM50,18v28h6v-28zM20,20v10h8v-10zM32,20h2v2h-2zM36,20h10v2h-10zM32,24h2v2h-2zM36,24h10v2h-10zM32,28h2v2h-2zM36,28h10v2h-10zM35,34h10c0.55228,0 1,0.44772 1,1v8c0,0.55228 -0.44772,1 -1,1h-10c-0.55228,0 -1,-0.44772 -1,-1v-8c0,-0.55228 0.44772,-1 1,-1zM18,36h2v2h-2zM22,36h10v2h-10zM36,36v6h8v-6zM18,40h2v2h-2zM22,40h10v2h-10zM31,52v4h2v-4zM23.41406,58l-2,2h21.17188l-2,-2z">
@@ -73,7 +73,7 @@
             <div class="after:opacity-65 after:bg-gradient-to-tl after:from-slate-600 after:to-slate-300 relative flex min-w-0 flex-col items-center break-words rounded-2xl border-0 border-solid border-blue-900 bg-white bg-clip-border shadow-none after:absolute after:top-0 after:bottom-0 after:left-0 after:z-10 after:block after:h-full after:w-full after:rounded-2xl after:content-['']"
                 sidenav-card>
                 <div class="mb-7.5 absolute h-full w-full rounded-2xl bg-cover bg-center"
-                    style="background-image: url('../assets/img/curved-images/white-curved.jpeg')"></div>
+                    style="background-image: url('../assets/img/curved-storage/white-curved.jpeg')"></div>
                 <div class="relative z-20 flex-auto w-full p-4 text-left text-white">
                     <div
                         class="flex items-center justify-center w-8 h-8 mb-4 text-center bg-white bg-center rounded-lg icon shadow-soft-2xl">

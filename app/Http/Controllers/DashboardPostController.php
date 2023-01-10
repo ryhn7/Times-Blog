@@ -6,6 +6,7 @@ use App\Models\Post;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class DashboardPostController extends Controller
@@ -51,12 +52,19 @@ class DashboardPostController extends Controller
         ]);
 
         if ($request->file('image')) {
+            //alternate to save img upload direct to public folder
+
+
+            // $image = $request->file('image');
+            // $name = time() . '.' . $image->getClientOriginalExtension();
+            // $destinationPath = public_path('/images');
+            // $image->move($destinationPath, $name);
+            // $validated['image'] = $name;
+
             $image = $request->file('image');
             $name = time() . '.' . $image->getClientOriginalExtension();
-            $destinationPath = public_path('/images');
-            $image->move($destinationPath, $name);
-            $validated['image'] = $name;
-            // $validated['image'] = $request->file('image')->store('images', 'public');
+            // save $name to database with function storeAs()
+            $validated['image'] = $image->storeAs('posts-images', $name);
         }
 
         $validated['user_id'] = auth()->user()->id;
@@ -114,9 +122,12 @@ class DashboardPostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
+        // dd($request->oldImage);
+
         $rules = [
             'title' => 'required|max:255',
             'category_id' => 'required',
+            'image' => 'image|file|max:2048',
             'body' => 'required',
         ];
 
@@ -125,6 +136,26 @@ class DashboardPostController extends Controller
         }
 
         $validated = $request->validate($rules);
+
+        if ($request->file('image')) {
+
+            if ($request->oldImage) {
+                Storage::delete($request->oldImage);
+            }
+
+            //alternate to save img upload direct to public folder
+
+            // $image = $request->file('image');
+            // $name = time() . '.' . $image->getClientOriginalExtension();
+            // $destinationPath = public_path('/images');
+            // $image->move($destinationPath, $name);
+            // $validated['image'] = $name;
+
+            $image = $request->file('image');
+            $name = time() . '.' . $image->getClientOriginalExtension();
+            // save $name to database with function storeAs()
+            $validated['image'] = $image->storeAs('posts-images', $name);
+        }
 
         $validated['user_id'] = auth()->user()->id;
 
@@ -143,6 +174,10 @@ class DashboardPostController extends Controller
      */
     public function destroy(Post $post)
     {
+
+        if ($post->image) {
+            Storage::delete($post->image);
+        }
 
         Post::destroy($post->id);
 

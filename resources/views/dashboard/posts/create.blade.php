@@ -51,12 +51,13 @@
                     <span class="text-gray-700 font-semibold">
                         Post Cover Image
                     </span>
+                    <img id="preview" class="hidden sm:flex-row flex-col min-w-0 my-7 mx-auto rounded shadow-md" width="700px">
                     <input
                         class="block w-full text-sm mt-1 cursor-pointer border border-gray-500 rounded focus:border-sky-800 focus:outline-none focus:shadow-sm focus:shadow-[#2c3e50] focus:transition-shadow file:rounded file:border-0
                         file:text-sm file:text-white file:px-2 file:py-1 file:cursor-pointer file:bg-gradient-to-tl from-gray-900 to-slate-800 file:opacity-90 hover:font-semibold hover:opacity-100 @error('image')
                         border-red-600 focus:border-red-600 focus:ring-red-600
                         @enderror"
-                        type="file" id="image" name="image" />
+                        type="file" id="image" name="image" onchange="imgPreview()" />
                     @error('image')
                         <p class="text-xs mt-1 text-red-700 font-franklin">{{ $message }}</p>
                     @enderror
@@ -93,5 +94,19 @@
         document.addEventListener('trix-file-accept', (e) => {
             e.preventDefault()
         })
+
+        function imgPreview() {
+            const img = document.getElementById('image');
+            const imgPreview = document.getElementById('preview');
+
+            const oFReader = new FileReader();
+            oFReader.readAsDataURL(img.files[0]);
+
+            oFReader.onload = function(oFREvent) {
+                imgPreview.classList.remove('hidden');
+                imgPreview.classList.add('block');
+                imgPreview.src = oFREvent.target.result;
+            };
+        }
     </script>
 @endsection
