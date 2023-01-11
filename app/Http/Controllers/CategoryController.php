@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use Illuminate\Http\Request;
+use \Cviebrock\EloquentSluggable\Services\SlugService;
 
 class CategoryController extends Controller
 {
@@ -14,7 +15,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return ('Dashboard category');
+        // return request()->name;
+        // return ('Dashboard category');
         return view('dashboard.category.index', [
             'categories' => Category::all(),
         ]);
@@ -27,7 +29,9 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        $validated = request()->validate([
+            'name' => 'required',
+        ]);
     }
 
     /**
@@ -84,5 +88,12 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
         //
+    }
+
+    public function generateSlug(Request $request)
+    {
+        $slug = SlugService::createSlug(Category::class, 'slug', $request->name);
+
+        return response()->json(['slug' => $slug]);
     }
 }
