@@ -15,8 +15,6 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        // return request()->name;
-        // return ('Dashboard category');
         return view('dashboard.category.index', [
             'categories' => Category::all(),
         ]);
@@ -29,9 +27,9 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        $validated = request()->validate([
-            'name' => 'required',
-        ]);
+        // return view('dashboard.category.index', [
+        //     'categories' => Category::all(),
+        // ]);
     }
 
     /**
@@ -42,7 +40,13 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = request()->validate([
+            'name' => 'required|max:50',
+            'slug' => 'required|unique:categories',
+        ]);
+
+        Category::create($validated);
+        return redirect('/dashboard/categories')->with('success', 'Category created successfully');
     }
 
     /**
@@ -53,7 +57,6 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        //
     }
 
     /**
@@ -64,7 +67,9 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        //
+        return view('dashboard.category.edit', [
+            'category' => $category,
+        ]);
     }
 
     /**
@@ -76,7 +81,20 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+        $rules = [
+            'name' => 'required|max:50'
+        ];
+
+        if ($request->slug != $category->slug) {
+            $rules['slug'] = 'required|unique:categories';
+        }
+
+        $validated = request()->validate($rules);
+
+        Category::where('id', $category->id)
+            ->update($validated);
+
+        return redirect('/dashboard/categories')->with('success', 'Category updated successfully');
     }
 
     /**
@@ -87,7 +105,9 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        Category::destroy($category->id);
+
+        return redirect('/dashboard/categories')->with('success', 'Category has been deleted successfully');
     }
 
     public function generateSlug(Request $request)
