@@ -114,7 +114,7 @@
         </div>
     @else
         <div class="max-w-full px-[450px] py-7">
-            <div class="text-3xl font-bold mb-3 font-franklin text-center">Page Not Found</div>
+            <div class="text-3xl font-extrabold mb-3 font-franklin text-center">Page Not Found</div>
             <div class="text-lg text-slate-500 font-semibold">We’re sorry, we seem to have lost this page, but we don’t
                 want
                 to lose you.
